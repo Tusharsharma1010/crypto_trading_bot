@@ -1,21 +1,27 @@
 🚀 Crypto Trading Bot – Binance Futures (Testnet)
-This is a Python-based command-line trading bot that places orders on the Binance USDT-M Futures Testnet. The bot uses python-binance and supports Market, Limit, and Stop-Market order types. It securely loads your API credentials via a .env file and logs all transactions for review.
+A Python-based trading bot for the Binance USDT-M Futures Testnet. Supports Market, Limit, and Stop-Market orders via a secure, interactive command-line interface.
 
-📦 Features
-✅ Place BUY and SELL orders
+📌 Features
+✅ Place Buy/Sell orders with user input
 
-✅ Support for Market, Limit, and Stop-Market orders
+🔒 Secure API key management using .env
 
-🔐 Secure API credentials via .env file
+🛠️ Order types supported:
 
-💬 Command-line interface for user input
+Market
 
-🧾 Logs all API requests/responses in bot_logs.log
+Limit
 
-❌ Ignores sensitive files using .gitignore
+Stop-Market (Stop-Limit logic)
 
-🛠️ Setup
-1. Clone the Repo
+📜 Real-time CLI prompts
+
+🧾 Logging via bot_logs.log
+
+🚫 Ignores sensitive files using .gitignore
+
+⚙️ Setup Instructions
+1. Clone the Repository
 bash
 Copy
 Edit
@@ -27,59 +33,55 @@ Copy
 Edit
 pip install -r requirements.txt
 3. Create a .env File
-In the root folder, create a .env file and add your Binance Testnet API credentials:
-
 ini
 Copy
 Edit
-API_KEY=your_api_key_here  
+API_KEY=your_api_key_here
 API_SECRET=your_api_secret_here
-🚨 Do NOT upload .env to GitHub. It's ignored via .gitignore.
+⚠️ Do not share your .env file — it contains sensitive credentials and is excluded via .gitignore.
 
-🚀 How to Run
+▶️ How to Run
 nginx
 Copy
 Edit
 python cli.py
-You will be prompted like this:
+You'll be prompted to enter:
+Trading symbol: BTCUSDT
 
-pgsql
+Order side: BUY or SELL
+
+Order type: MARKET, LIMIT, or STOP_LIMIT
+
+Quantity: e.g., 0.01
+
+(For STOP_LIMIT only) Stop Price and Limit Price
+
+🧪 Example Usage
+mathematica
 Copy
 Edit
 📈 Welcome to the Binance Futures Testnet Trading Bot
 🔁 Enter trading symbol (e.g., BTCUSDT)
 📊 Enter order side (BUY / SELL)
 ⚙️ Enter order type (MARKET / LIMIT / STOP_LIMIT)
-📦 Enter quantity
-⛔ Enter stop price (for STOP_LIMIT only)
-💰 Enter limit price (for LIMIT or STOP_LIMIT orders)
-🧾 Example
-Market Order (Buy 0.01 BTCUSDT):
-
-yaml
-Copy
-Edit
-🔁 Enter trading symbol: BTCUSDT
-📊 Enter order side: BUY
-⚙️ Enter order type: MARKET
 📦 Enter quantity: 0.01
-📂 Project Structure
+⛔ Enter stop price: 65000
+💰 Enter limit price: 64900
+🗂️ Project Structure
 bash
 Copy
 Edit
 crypto_trading_bot/
-├── bot.py
-├── cli.py
-├── .env               # Not tracked (private)
-├── .gitignore
-├── README.md
-├── requirements.txt
-├── bot_logs.log
-📜 License
-This project is open-source under the MIT License.
-
-🙋‍♂️ Author
+├── bot.py             → Core order logic
+├── cli.py             → CLI interaction script
+├── .env               → Stores API credentials (not committed)
+├── .gitignore         → Ignores .env and log files
+├── README.md          → Project documentation
+├── requirements.txt   → Dependencies
+├── bot_logs.log       → Logs API responses/errors
+🧑‍💻 Author
 Tushar Sharma
-🔗 GitHub Profile
+📎 GitHub Profile
 
-⚠️ For demo/testing purposes only. Not for real-money trading.
+⚠️ Disclaimer
+This bot is for educational/testing purposes using the Binance Testnet only. Do not use with real funds.
