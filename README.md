@@ -1,84 +1,68 @@
 # 🚀 Crypto Trading Bot – Binance Futures (Testnet)
 
-A Python-based automated trading bot for Binance USDT-M Futures Testnet. Supports Market, Limit, and Stop-Market orders via an interactive CLI.
+This is a Python-based command-line trading bot that places orders on the **Binance USDT-M Futures Testnet**. The bot uses `python-binance` and supports **Market**, **Limit**, and **Stop-Market** order types. It securely loads your API credentials via a `.env` file and logs all transactions for review.
 
 ---
 
 ## 📦 Features
 
-- 🔑 Secure API key handling using `.env`
-- 💬 Interactive command-line interface (CLI)
-- ✅ Place **Market**, **Limit**, and **Stop-Market** orders
-- 📄 Logging of all API responses and errors (`bot_logs.log`)
-- 🔧 Built with `python-binance` and `dotenv`
-- 🛠️ Easily extendable for future order types (OCO, Grid, etc.)
+- ✅ Place **BUY** and **SELL** orders
+- ✅ Support for **Market**, **Limit**, and **Stop-Market** orders
+- 🔐 Secure API credentials via `.env` file
+- 💬 Command-line interface for user input
+- 🧾 Logs all API requests/responses in `bot_logs.log`
+- ❌ Ignores sensitive files using `.gitignore`
 
 ---
 
-## 📂 Project Structure
+## 🛠️ Setup
 
-crypto_trading_bot/
-├── bot.py # Core bot logic (place orders)
-├── cli.py # CLI user interaction script
-├── .env # (Not committed) Contains your Binance API credentials
-├── .gitignore # Excludes sensitive files like .env
-├── requirements.txt # All Python dependencies
-├── bot_logs.log # Logged order responses & errors
-├── README.md # You're reading it!
+### 1. Clone the Repo
 
----
+```bash
+git clone https://github.com/Tusharsharma1010/crypto_trading_bot.git
+cd crypto_trading_bot
 
-## 🔐 Environment Setup
+Install Dependencies
+pip install -r requirements.txt
 
-Create a `.env` file in the root folder with:
-
+Create a .env File
+In the root folder, create a .env file and add your Binance Testnet API credentials:
 API_KEY=your_api_key_here
 API_SECRET=your_api_secret_here
 
-
-> ⚠️ Never commit your `.env` file to GitHub!
-
----
-
-## ⚙️ Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/crypto_trading_bot.git
-cd crypto_trading_bot
-
-# Install dependencies
-pip install -r requirements.txt
-
-🚀 Running the Bot
+🚀 How to Run
 python cli.py
 
-The bot will guide you with prompts like:
+You will be prompted like this:
+📈 Welcome to the Binance Futures Testnet Trading Bot
+🔁 Enter trading symbol (e.g., BTCUSDT)
+📊 Enter order side (BUY / SELL)
+⚙️ Enter order type (MARKET / LIMIT / STOP_LIMIT)
+📦 Enter quantity
+⛔ Enter stop price (for STOP_LIMIT only)
+💰 Enter limit price (for LIMIT or STOP_LIMIT orders)
 
-Trading symbol (e.g., BTCUSDT)
+🧾 Example
+Market Order (Buy 0.01 BTCUSDT):
+🔁 Enter trading symbol: BTCUSDT
+📊 Enter order side: BUY
+⚙️ Enter order type: MARKET
+📦 Enter quantity: 0.01
 
-Order side (BUY or SELL)
+📂 Project Structure
+crypto_trading_bot/
+├── bot.py             # Bot logic and order placement
+├── cli.py             # CLI for user interaction
+├── .env               # Your API keys (not uploaded)
+├── .gitignore         # Ensures sensitive files are not tracked
+├── README.md          # Project documentation
+├── requirements.txt   # Python dependencies
+├── bot_logs.log       # Log file for order status and errors
 
-Order type (MARKET, LIMIT, STOP_LIMIT)
+📜 License
+This project is open-source under the MIT License.
 
-Quantity
-
-Stop/Limit price if needed
-
-📘 Sample Order Log (bot_logs.log)
-2025-06-23 20:01:23,488 - INFO - Order Placed: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.01', ...}
-
-
-🎯 Future Enhancements
-Add support for OCO or TWAP orders
-
-Simple Streamlit UI (optional)
-
-Add account balance and trade history features
-
-🧑‍💻 Author
-Tushar Sharma
-Python Developer | AI + Trading Enthusiast
-📧 tusharsharma2228@email.com
-✅ License
-This project is for educational/demo purposes using Binance Futures Testnet. Do not use with real funds without proper validation.
+🙋‍♂️ Author
+Built by Tushar Sharma
+🔗 GitHub Profile
